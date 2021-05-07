@@ -8,7 +8,8 @@
     "build": "tsc --build",
     "start": "cross-env NODE_ENV=production tsc --build && node dist/index.js",
     "dev": "cross-env NODE_ENV=development nodemon src/index.ts",
-    "lint": "yarn eslint src/**/*.ts --quiet --fix"
+    "lint": "yarn eslint src/**/*.ts --quiet --fix",
+    "format": "yarn prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -25,11 +26,13 @@
     "@typescript-eslint/eslint-plugin": "^4.22.1",
     "@typescript-eslint/parser": "^4.22.1",
     "eslint": "^7.12.1",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-config-standard": "^16.0.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "nodemon": "^2.0.7",
+    "prettier": "2.2.1",
     "ts-node": "^9.1.1"
   }
 }

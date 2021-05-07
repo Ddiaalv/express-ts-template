@@ -1,8 +1,9 @@
-// index.ts
-import express, { Request, Response, Application } from "express";
+import express, { Application, Request, Response } from "express";
 
 const app: Application = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
+
+app.use("/img", express.static(__dirname + "/public"));
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + Typescript Server");

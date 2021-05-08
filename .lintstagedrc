@@ -1,0 +1,5 @@
+{
+  "*.ts": "yarn lint",
+  "*.{js,ts,json,md}": "yarn format",
+  "*.test.ts": "yarn test:check",
+}

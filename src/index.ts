@@ -15,12 +15,18 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next()
 })
 
+export const defaultMessage = 'Express + Typescript Server'
+export const defaultObject = { name: 'David', lastname: 'Díaz Alvarez' }
+
 app.get('/', (req: Request, res: Response) => {
-  res.send('Express + Typescript Server')
+  res.send(defaultObject)
 })
 
-app.listen(PORT, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`)
-})
+const envIsNotTest = process.env.NODE_ENV !== 'test'
+if (envIsNotTest) {
+  app.listen(PORT, () =>
+    console.log(`⚡️[server]: Server is running at http://localhost:${PORT}`)
+  )
+}
 
 export default app

@@ -1,5 +1,6 @@
 import express, { Application, NextFunction, Request, Response } from 'express'
 import path from 'path'
+import monstersRoutes from './routes/monsters.routes'
 
 const app: Application = express()
 const PORT = process.env.PORT || 3001
@@ -21,6 +22,9 @@ export const defaultObject = { name: 'David', lastname: 'Díaz Alvarez' }
 app.get('/', (req: Request, res: Response) => {
   res.send(defaultObject)
 })
+
+// Routes
+app.use(monstersRoutes)
 
 const envIsNotTest = process.env.NODE_ENV !== 'test'
 if (envIsNotTest) {
